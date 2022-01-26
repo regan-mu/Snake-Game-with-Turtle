@@ -1,4 +1,5 @@
 This is a python Snake Game built purely with python's **turtle** library.
+The goal of the game is to accumulate as many points as possible without hitting the wall or the head of the snake colliding with the tail of the snake. 
 
 
 ### CONTROLS
@@ -7,3 +8,5 @@ This is a python Snake Game built purely with python's **turtle** library.
 * Down Arrow -> To go down.
 * Left Arrow -> To go left.
 * Right Arrow -> To go right.
+
+##### Enjoy
