@@ -14,6 +14,7 @@ screen.tracer(0)
 snake = Snake()
 food = Food()
 score = Score()
+
 screen.listen()
 screen.onkey(key="Up", fun=snake.up)
 screen.onkey(key="Down", fun=snake.down)
@@ -34,15 +35,17 @@ while game_on:
 
     # Detect Collision with Wall
     if snake.snake_head.xcor() > 280 or snake.snake_head.xcor() < -280 or snake.snake_head.ycor() > 280 or snake.snake_head.ycor() < -280:
-        game_on = False
-        score.game_over()
+        score.reset()
+        snake.reset()
 
     # Detect Collision with Tail
     # If head collides with any part the game is over.
-    for segment in snake.segments[1:]:
-        if snake.snake_head.distance(segment) < 10:
-            game_on = False
-            score.game_over()
+    for segment in snake.segments:
+        if segment == snake.snake_head:
+            pass
+        elif snake.snake_head.distance(segment) < 10:
+            score.reset()
+            snake.reset()
 
 
 
